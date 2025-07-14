@@ -11,35 +11,8 @@ const Hero = () => {
 			 */}
 			<div>
 				<Spotlight
-					className="top-0 left-0 w-[60vw] h-[60vh]"
-					gradientFirst="conic-gradient(from 180deg at 50% 50%, #a5b4fc 0deg, #f0abfc 120deg, #fff 240deg, #a5b4fc 360deg)"
-					width={600}
-					height={600}
-					smallWidth={200}
-				/>
-				{/* Faint Blue */}
-				<Spotlight
-					className="top-0 left-0 w-[60vw] h-[60vh]"
-					gradientFirst="radial-gradient(circle, rgba(100,149,237,0.15) 0%, rgba(100,149,237,0) 80%)"
-					width={600}
-					height={600}
-					smallWidth={200}
-				/>
-				{/* Faint Purple */}
-				<Spotlight
-					className="top-20 left-1/3 w-[60vw] h-[60vh]"
-					gradientFirst="radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(168,85,247,0) 80%)"
-					width={600}
-					height={600}
-					smallWidth={200}
-				/>
-				{/* Faint White */}
-				<Spotlight
-					className="top-40 left-2/3 w-[60vw] h-[60vh]"
-					gradientFirst="radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 80%)"
-					width={600}
-					height={600}
-					smallWidth={200}
+					conicalGradient="conic-gradient(from 180deg at 50% 0%, #fff 0deg, #a5b4fc 90deg, transparent 360deg)"
+					className="top-0 left-1/2 -translate-x-1/2"
 				/>
 			</div>
 
