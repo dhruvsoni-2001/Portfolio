@@ -10,10 +10,9 @@ const Hero = () => {
 			 *  Link: https://ui.aceternity.com/components/spotlight
 			 */}
 			<div>
-				<Spotlight
-					conicalGradient="conic-gradient(from 180deg at 50% 0%, #fff 0deg, #a5b4fc 90deg, transparent 360deg)"
-					className="top-0 left-1/2 -translate-x-1/2"
-				/>
+				<Spotlight />
+				<Spotlight />
+				<Spotlight conicSize={1100} conicOpacity={8} />
 			</div>
 
 			{/**
@@ -51,7 +50,10 @@ const Hero = () => {
 					 *
 					 *  change md:text-6xl, add more responsive code
 					 */}
-					 <TextGenerateEffect words="Welcome to my Portfolio" />
+					<TextGenerateEffect
+						words="Transforming Concepts into Seamless User Experiences"
+						className="text-center text-[40px] md:text-5xl lg:text-6xl"
+					/>
 
 					<p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
 						Hi! I&apos;m Dhruv, a Software Developer based in India.
