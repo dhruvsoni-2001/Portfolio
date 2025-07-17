@@ -1,197 +1,200 @@
 @import "tailwindcss";
+
+/* Base variables (can be your dark theme defaults) */
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+    --background: #0a0a0a; /* Dark background */
+    --foreground: #ededed; /* Light foreground */
+    --color-bg-black-100: #000319;
+    --color-black-200: rgba(17, 25, 40, 0.75);
+    --color-black-300: rgba(255, 255, 255, 0.125);
+    --color-white-100: #bec1dd;
+    --color-white-200: #c1c2d3;
+    --color-blue-100: #e4ecff;
+	
+
+    /* Add your other dark mode variables here if they are not already defined within a dark: variant in Tailwind config */
+    --border: hsl(220 14% 95%); /* Adjust these to your dark theme values */
+    --input: hsl(220 14% 97%);
+    --ring: hsl(220 13% 91%);
+    --primary: hsl(262 83% 58%);
+    --primary-foreground: hsl(0 0% 100%);
+    --secondary: hsl(240 10% 95%);
+    --secondary-foreground: hsl(240 10% 25%);
+    --destructive: hsl(0 84% 60%);
+    --destructive-foreground: hsl(0 0% 100%);
+    --muted: hsl(220 14% 97%);
+    --muted-foreground: hsl(220 10% 40%);
+    --accent: hsl(262 83% 95%);
+    --accent-foreground: hsl(262 83% 30%);
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(240 10% 10%);
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(240 10% 10%);
 }
 
-@theme inline {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
-	--animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
-}
+/* Remove the @media (prefers-color-scheme: dark) block entirely if you want to force dark mode.
+   The 'dark' class on the HTML element will ensure these variables are picked up by Tailwind's dark: variant. */
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-		--color-bg-black-100: #000319;
-		--color-black-200: rgba(17, 25, 40, 0.75);
-		--color-black-300: rgba(255, 255, 255, 0.125);
-		--color-white-100: #bec1dd;
-		--color-white-200: #c1c2d3;
-		--color-blue-100: #e4ecff;
-
-		--border: hsl(220 14% 95%);
-		--input: hsl(220 14% 97%);
-		--ring: hsl(220 13% 91%);
-		--primary: hsl(262 83% 58%);
-		--primary-foreground: hsl(0 0% 100%);
-		--secondary: hsl(240 10% 95%);
-		--secondary-foreground: hsl(240 10% 25%);
-		--destructive: hsl(0 84% 60%);
-		--destructive-foreground: hsl(0 0% 100%);
-		--muted: hsl(220 14% 97%);
-		--muted-foreground: hsl(220 10% 40%);
-		--accent: hsl(262 83% 95%);
-		--accent-foreground: hsl(262 83% 30%);
-		--popover: hsl(0 0% 100%);
-		--popover-foreground: hsl(240 10% 10%);
-		--card: hsl(0 0% 100%);
-		--card-foreground: hsl(240 10% 10%);
-	}
-}
 
 body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Your existing @theme inline and @layer utilities remain the same */
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    /* Ensure these are correctly pointing to your font variables if you're using them */
+    /* --font-sans: var(--font-geist-sans); */
+    /* --font-mono: var(--font-geist-mono); */
+    --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 }
 
 @layer utilities {
-	.bg-black-100 {
-		background-color: var(--color-bg-black-100);
-	}
+    .bg-black-100 {
+        background-color: var(--color-bg-black-100);
+    }
 
-	.text-black-100 {
-		color: var(--color-bg-black-100);
-	}
-	/* Background Patterns */
-	.bg-dot {
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'%3E%3Ccircle fill='%23ccc' cx='10' cy='10' r='1.63'/%3E%3C/svg%3E");
-		background-repeat: repeat;
-	}
+    .text-black-100 {
+        color: var(--color-bg-black-100);
+    }
+    /* Background Patterns */
+    .bg-dot {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'%3E%3Ccircle fill='%23ccc' cx='10' cy='10' r='1.63'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+    }
 
-	.bg-grid {
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23ccc'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
-		background-repeat: repeat;
-	}
+    .bg-grid {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23ccc'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+    }
 
-	.bg-grid-small {
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='8' height='8' fill='none' stroke='%23ccc'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
-		background-repeat: repeat;
-	}
+    .bg-grid-small {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='8' height='8' fill='none' stroke='%23ccc'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+    }
 
-	/* Animation Utilities */
-	.animate-spotlight {
-		animation: spotlight 2s ease 0.75s 1 forwards;
-	}
+    /* Animation Utilities */
+    .animate-spotlight {
+        animation: spotlight 2s ease 0.75s 1 forwards;
+    }
 
-	.animate-accordion-down {
-		animation: accordion-down 0.2s ease-out;
-	}
+    .animate-accordion-down {
+        animation: accordion-down 0.2s ease-out;
+    }
 
-	.animate-accordion-up {
-		animation: accordion-up 0.2s ease-out;
-	}
+    .animate-accordion-up {
+        animation: accordion-up 0.2s ease-out;
+    }
 
-	.animate-shimmer {
-		animation: shimmer 2s linear infinite;
-	}
+    .animate-shimmer {
+        animation: shimmer 2s linear infinite;
+    }
 
-	.animate-first {
-		animation: moveVertical 30s ease infinite;
-	}
+    .animate-first {
+        animation: moveVertical 30s ease infinite;
+    }
 
-	.animate-second {
-		animation: moveInCircle 20s reverse infinite;
-	}
+    .animate-second {
+        animation: moveInCircle 20s reverse infinite;
+    }
 
-	.animate-third {
-		animation: moveInCircle 40s linear infinite;
-	}
+    .animate-third {
+        animation: moveInCircle 40s linear infinite;
+    }
 
-	.animate-fourth {
-		animation: moveHorizontal 40s ease infinite;
-	}
+    .animate-fourth {
+        animation: moveHorizontal 40s ease infinite;
+    }
 
-	.animate-fifth {
-		animation: moveInCircle 20s ease infinite;
-	}
+    .animate-fifth {
+        animation: moveInCircle 20s ease infinite;
+    }
 
-	.animate-scroll {
-		animation: scroll var(--animation-duration, 40s)
-			var(--animation-direction, forwards) linear infinite;
-	}
+    .animate-scroll {
+        animation: scroll var(--animation-duration, 40s)
+            var(--animation-direction, forwards) linear infinite;
+    }
 }
 
 @keyframes spotlight {
-	0% {
-		opacity: 0;
-		transform: translate(-72%, -62%) scale(0.5);
-	}
-	100% {
-		opacity: 1;
-		transform: translate(-50%, -40%) scale(1);
-	}
+    0% {
+        opacity: 0;
+        transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -40%) scale(1);
+    }
 }
 
 @keyframes accordion-down {
-  from {
-    height: 0;
-  }
-  to {
-    height: var(--radix-accordion-content-height);
-  }
+    from {
+        height: 0;
+    }
+    to {
+        height: var(--radix-accordion-content-height);
+    }
 }
 
 @keyframes accordion-up {
-  from {
-    height: var(--radix-accordion-content-height);
-  }
-  to {
-    height: 0;
-  }
+    from {
+        height: var(--radix-accordion-content-height);
+    }
+    to {
+        height: 0;
+    }
 }
 
 @keyframes shimmer {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -200% 0;
-  }
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -200% 0;
+    }
 }
 
 @keyframes moveHorizontal {
-  0% {
-    transform: translateX(-50%) translateY(-10%);
-  }
-  50% {
-    transform: translateX(50%) translateY(10%);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-10%);
-  }
+    0% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+        transform: translateX(50%) translateY(10%);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-10%);
+    }
 }
 
 @keyframes moveInCircle {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes moveVertical {
-  0% {
-    transform: translateY(-50%);
-  }
-  50% {
-    transform: translateY(50%);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
+    0% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
 }
 
 @keyframes scroll {
-  to {
-    transform: translate(calc(-50% - 0.5rem));
-  }
+    to {
+        transform: translate(calc(-50% - 0.5rem));
+    }
 }

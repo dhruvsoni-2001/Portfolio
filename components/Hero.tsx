@@ -10,10 +10,9 @@ const Hero = () => {
 			 *  Link: https://ui.aceternity.com/components/spotlight
 			 */}
 			<div>
-				<Spotlight
-					conicalGradient="conic-gradient(from 180deg at 50% 0%, #fff 0deg, #a5b4fc 90deg, transparent 360deg)"
-					className="top-0 left-1/2 -translate-x-1/2"
-				/>
+				<Spotlight />
+				<Spotlight />
+				<Spotlight />
 			</div>
 
 			{/**
@@ -28,9 +27,8 @@ const Hero = () => {
 				{/* Radial gradient for the container to give a faded look */}
 				<div
 					className="absolute top-0 left-0 h-full w-full
-      bg-[linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]
-      dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]
-      bg-[size:60px_60px]
+      bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)]
+      bg-[size:50px_50px]
       [mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]"
 				></div>
 				<div
@@ -51,9 +49,12 @@ const Hero = () => {
 					 *
 					 *  change md:text-6xl, add more responsive code
 					 */}
-					 <TextGenerateEffect words="Welcome to my Portfolio" />
+					<TextGenerateEffect
+						words="Building Scalable Products Engineered for Impact"
+						className="text-center text-[40px] md:text-5xl lg:text-6xl"
+					/>
 
-					<p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
+					<p className="text-center md:tracking-wider my-4 text-sm md:text-lg lg:text-2xl ">
 						Hi! I&apos;m Dhruv, a Software Developer based in India.
 					</p>
 				</div>
