@@ -1,6 +1,9 @@
 import React from "react";
 import { Spotlight } from "./ui/spotlight-new";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
+import { cn } from "@/lib/utils";
+import MagicButton from "./ui/MagicButton";
+import { FaLocationArrow } from "react-icons/fa";
 
 const Hero = () => {
 	return (
@@ -21,9 +24,9 @@ const Hero = () => {
 			 *  0.2 to 0.03
 			 */}
 			<div
-				className="h-screen w-full dark:bg-black-100 dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
-       absolute top-0 left-0 flex items-center justify-center"
-			>
+  className="fixed inset-0 z-0 w-full h-screen dark:bg-black-100 dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] flex items-center justify-center"
+>
+
 				{/* Radial gradient for the container to give a faded look */}
 				<div
 					className="absolute top-0 left-0 h-full w-full
@@ -38,7 +41,7 @@ const Hero = () => {
 				/>
 			</div>
 
-			<div className="flex justify-center relative my-20 z-10">
+			<div className="flex justify-center relative my-10 z-10">
 				<div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
 					<p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
 						Dynamic Web Magic with Next.js
@@ -51,12 +54,20 @@ const Hero = () => {
 					 */}
 					<TextGenerateEffect
 						words="Building Scalable Products Engineered for Impact"
-						className="text-center text-[40px] md:text-5xl lg:text-6xl"
+						className="my-4 text-center text-[40px] sm:text-4xl md:text-6xl lg:text--5xl"
 					/>
 
 					<p className="text-center md:tracking-wider my-4 text-sm md:text-lg lg:text-2xl ">
 						Hi! I&apos;m Dhruv, a Software Developer based in India.
 					</p>
+					<a href="#about" className="mt-4">
+						<MagicButton
+							className="bg-black "
+							title="Show my work"
+							icon={<FaLocationArrow />}
+							position="right"
+						/>
+					</a>
 				</div>
 			</div>
 		</div>

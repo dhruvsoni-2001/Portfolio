@@ -16,7 +16,7 @@ export const TextGenerateEffect = ({
 }) => {
 	const [scope, animate] = useAnimate();
 	const wordsArray = words.split(" ");
-	const charsArray = words.split("");
+	// const charsArray = words.split("");
 	useEffect(() => {
 		animate(
 			"span",
@@ -33,7 +33,7 @@ export const TextGenerateEffect = ({
 
 	const highlightWords: { [key: string]: string } = {
 		products: "text-purple-600",
-		impact: "text-yellow-500",
+		impact: "text-green-400",
 	};
 	const renderWords = () => {
 		return (
@@ -41,8 +41,7 @@ export const TextGenerateEffect = ({
 				{wordsArray.map((word, idx) => {
 					const cleanWord = word.toLowerCase().replace(/[^a-z]/gi, ""); // Remove punctuation
 					const highlightClass =
-						highlightWords[cleanWord] ||
-						"text-white  opacity-0";
+						highlightWords[cleanWord] || "text-white  opacity-0";
 
 					return (
 						<motion.span
@@ -62,7 +61,12 @@ export const TextGenerateEffect = ({
 	return (
 		<div className={cn("font-bold", className)}>
 			<div className="mt-4">
-				<div className=" dark:text-white text-black text-2xl leading-snug tracking-wide">
+				<div
+					className={cn(
+						"dark:text-white text-black leading-snug tracking-wide",
+						className
+					)}
+				>
 					{renderWords()}
 				</div>
 			</div>

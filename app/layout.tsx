@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter} from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 // import { ThemeProvider } from "@/components/ui/theme-provider";
 
-const inter = Inter({subsets: ["latin"]});
+const inter = Inter({ subsets: ["latin"] });
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -16,20 +16,19 @@ const inter = Inter({subsets: ["latin"]});
 // });
 
 export const metadata: Metadata = {
-  title: "Dhruv's Portfolio",
-  description: "Mordern Portfolio Template",
+	title: "Dhruv's Portfolio",
+	description: "Mordern Portfolio Template",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" className="dark"> {/* <- force dark mode */}
-      <body className={`${inter.className}`}>
-        {children}
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en" className="dark">
+			{/* <- force dark mode */}
+			<body className={`${inter.className}`}>{children}</body>
+		</html>
+	);
 }
