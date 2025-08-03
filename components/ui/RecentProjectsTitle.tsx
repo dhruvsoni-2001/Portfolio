@@ -1,0 +1,92 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { motion, useInView, Easing } from "framer-motion";
+
+const ColourfulText = ({ text, isInView }: { text: string; isInView: boolean }) => {
+  const colors = ["#E0BBE4", "#957DAD", "#D291BC", "#FEC8D8", "#FFDFD3"];
+  const [currentColors, setCurrentColors] = useState(colors);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const shuffled = [...colors].sort(() => Math.random() - 0.5);
+      setCurrentColors(shuffled);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const charVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      color: currentColors[i % currentColors.length],
+      transition: {
+        duration: 0.5,
+        delay: i * 0.05,
+        ease: "easeInOut" as Easing,
+      },
+    }),
+  };
+
+  return (
+    <span className="inline-block">
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={`${char}-${index}`}
+          variants={charVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={index}
+          className="inline-block"
+        >
+          {char}
+        </motion.span>
+      ))}
+    </span>
+  );
+};
+
+const AnimatedTitle = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const animatedText = "A Small Selection of Recent".split(" ");
+
+  const wordVariants = {
+    hidden: { opacity: 0, filter: "blur(4px)", y: 10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      filter: "blur(0px)",
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: i * 0.1,
+        ease: "easeInOut" as Easing,
+      },
+    }),
+  };
+
+  return (
+    <h1
+      ref={ref}
+      className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white"
+    >
+      {animatedText.map((word, index) => (
+        <motion.span
+          key={`word-${index}`}
+          variants={wordVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={index}
+          className="inline-block mr-2"
+        >
+          {word}
+        </motion.span>
+      ))}
+      <ColourfulText key="projects-word" text="Projects" isInView={isInView} />
+    </h1>
+  );
+};
+
+export default AnimatedTitle;

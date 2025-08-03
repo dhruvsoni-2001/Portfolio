@@ -1,115 +1,84 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
+import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
-import { motion, useInView, Easing } from "framer-motion";
-
-// New component for the colorful text animation
-const ColourfulText = ({ text, isInView }: { text: string; isInView: boolean }) => {
-  // New vibrant colors that pop on a dark background
-  const colors = [
-    "#E0BBE4", // Light Purple
-    "#957DAD", // Muted Purple
-    "#D291BC", // Pink
-    "#FEC8D8", // Lighter Pink
-    "#FFDFD3", // Peach
-  ];
-
-  const [currentColors, setCurrentColors] = useState(colors);
-
-  useEffect(() => {
-    // Shuffle colors every 5 seconds
-    const interval = setInterval(() => {
-      const shuffled = [...colors].sort(() => Math.random() - 0.5);
-      setCurrentColors(shuffled);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Animation variants for each character
-  const charVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      color: currentColors[i % currentColors.length],
-      transition: {
-        duration: 0.5,
-        delay: i * 0.05,
-        ease: "easeInOut" as Easing, // Corrected the type for the 'ease' property
-      },
-    }),
-  };
-
-  return (
-    <span className="inline-block">
-      {text.split("").map((char, index) => (
-        <motion.span
-          key={`${char}-${index}`}
-          variants={charVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"} // Control animation
-          custom={index}
-          className="inline-block"
-        >
-          {char}
-        </motion.span>
-      ))}
-    </span>
-  );
-};
-
-// The text to be animated
-const animatedText = "A Small Selection of Recent".split(" ");
+import AnimatedTitle from "./ui/RecentProjectsTitle";
+import { PinContainer } from "./ui/Pin";
+import RevealOnScroll from "./ui/RevealOnScroll";
 
 const RecentProjects = () => {
   const ref = useRef(null);
-  // Trigger animation only once when the component is in view
-  const isInView = useInView(ref, { once: true });
-
-  // Animation variants for the words
-  const wordVariants = {
-    hidden: { opacity: 0, filter: "blur(4px)", y: 10 },
-    visible: (i: number) => ({
-      opacity: 1,
-      filter: "blur(0px)",
-      y: 0,
-      transition: {
-        duration: 0.5,
-        delay: i * 0.1,
-        ease: "easeInOut" as Easing, // Corrected the type for the 'ease' property
-      },
-    }),
-  };
 
   return (
     <div ref={ref} className="py-20">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center">
-        {animatedText.map((word, index) => (
-          <motion.span
-            key={`word-${index}`} // Added a more descriptive key
-            variants={wordVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"} // Control animation
-            custom={index}
-            className="inline-block mr-2 text-white"
+      <AnimatedTitle />
+      <RevealOnScroll direction="left" delay={0.2} duration={0.6}>
+      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+        {projects.map((item) => (
+          <div
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            key={item.id}
           >
-            {word}
-          </motion.span>
-        ))}
-        {/* THIS IS THE FIX: Added a unique key to this component */}
-        <ColourfulText key="projects-word" text="Projects" isInView={isInView} />
-      </h1>
+            <PinContainer title={item.title} href={item.link}>
+              {/* Top image container */}
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+                <div
+                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
+                  style={{ backgroundColor: "#13162D" }}
+                >
+                  <img src="/bg.png" alt="background" />
+                </div>
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="z-10 absolute bottom-0"
+                />
+              </div>
 
-     <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
-        {projects.map((project) => (
-          <div>
-            {project.title}
+              {/* Title */}
+              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+                {item.title}
+              </h1>
+
+              {/* Description */}
+              <p
+                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                style={{ color: "#BEC1DD", margin: "1vh 0" }}
+              >
+                {item.des}
+              </p>
+
+              {/* Icons & Button */}
+              <div className="flex items-center justify-between mt-7 mb-3">
+                <div className="flex items-center">
+                  {item.iconLists.map((icon, index) => (
+                    <div
+                      key={index}
+                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      style={{
+                        transform: `translateX(-${5 * index + 2}px)`,
+                      }}
+                    >
+                      <img src={icon} alt={`icon-${index}`} className="p-2" />
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex justify-center items-center">
+                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                    Check Live Site
+                  </p>
+                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                </div>
+              </div>
+            </PinContainer>
           </div>
         ))}
       </div>
+      </RevealOnScroll>
     </div>
+    
   );
 };
 
