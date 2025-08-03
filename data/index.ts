@@ -72,8 +72,8 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
+    title: "An Alarms Clock for Productivity",
+    des: "Experince the real power of the Pomodoro Technique with this productivity app. It can Act as your personal Assistant to help you get things done in a more efficient way. You Can Download this app in the Mobile As well.",
     img: "/p1.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://github.com/adrianhajdin?tab=repositories",
