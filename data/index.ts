@@ -75,8 +75,8 @@ export const projects = [
     title: "An Alarms Clock for Productivity",
     des: "Experince the real power of the Pomodoro Technique with this productivity app. It can Act as your personal Assistant to help you get things done in a more efficient way. You Can Download this app in the Mobile As well.",
     img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://github.com/adrianhajdin?tab=repositories",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+    link: "https://github.com/dhruvsoni-2001/alarmclock",
   },
   {
     id: 2,

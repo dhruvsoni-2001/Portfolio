@@ -13,13 +13,14 @@ const RecentProjects = () => {
   return (
     <div ref={ref} className="py-20">
       <AnimatedTitle />
-      <RevealOnScroll direction="left" delay={0.2} duration={0.6}>
+      
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((item) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
           >
+            <RevealOnScroll direction="left" delay={0.2} duration={0.6}>
             <PinContainer title={item.title} href={item.link}>
               {/* Top image container */}
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
@@ -43,7 +44,7 @@ const RecentProjects = () => {
 
               {/* Description */}
               <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                className="lg:text-lg lg:font-normal font-light text-sm line-clamp-2"
                 style={{ color: "#BEC1DD", margin: "1vh 0" }}
               >
                 {item.des}
@@ -73,10 +74,11 @@ const RecentProjects = () => {
                 </div>
               </div>
             </PinContainer>
+            </RevealOnScroll>
           </div>
         ))}
       </div>
-      </RevealOnScroll>
+      
     </div>
     
   );

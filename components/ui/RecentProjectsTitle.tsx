@@ -4,7 +4,18 @@ import React, { useEffect, useState } from "react";
 import { motion, useInView, Easing } from "framer-motion";
 
 const ColourfulText = ({ text, isInView }: { text: string; isInView: boolean }) => {
-  const colors = ["#E0BBE4", "#957DAD", "#D291BC", "#FEC8D8", "#FFDFD3"];
+  const colors = [
+  "#8A2BE2", // Electric Purple
+  "#7FFFD4", // Aqua Mint
+  "#FF6EC7", // Neon Pink
+  "#00FFFF", // Cyan / Aqua
+  "#FFD700", // Golden Yellow
+  "#ADFF2F", // Green Yellow
+  "#FF8C00", // Dark Orange
+  "#FF1493", // Deep Pink
+  "#00CED1", // Dark Turquoise
+  "#DA70D6", // Orchid
+];
   const [currentColors, setCurrentColors] = useState(colors);
 
   useEffect(() => {
@@ -50,7 +61,7 @@ const ColourfulText = ({ text, isInView }: { text: string; isInView: boolean }) 
 
 const AnimatedTitle = () => {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
   const animatedText = "A Small Selection of Recent".split(" ");
 
   const wordVariants = {
