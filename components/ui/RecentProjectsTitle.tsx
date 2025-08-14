@@ -81,7 +81,7 @@ const AnimatedTitle = () => {
   return (
     <h1
       ref={ref}
-      className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white"
+      className="text-3xl sm:text-4xl md:text-5xl font-bold text-center"
     >
       {animatedText.map((word, index) => (
         <motion.span

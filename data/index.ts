@@ -80,11 +80,11 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/zoom-clone",
+    title: "Aaven Pharmaceuticals",
+    des: "A website for Aaven Pharmaceuticals with multiple pages and features.",
+    img: "/aaven.svg",
+    iconLists: ["/html.svg", "/css.svg", "/js.svg", "/wordpress.svg"],
+    link: "https://aavenpharmaceutical.com/",
   },
   {
     id: 3,
