@@ -35,16 +35,20 @@ const Page = () => {
 			<div className="pb-20 pt-36 w-full max-w-5xl relative z-10">
 				
 					{/* The Timeline component is rendered here, receiving the work experience data */}
-					<Timeline data={experienceData} />
+					<Timeline
+						data={experienceData}
+						title="Professional Experience"
+						subtitle="Here's a detailed look at my work experience and career progression."
+					/>
 
 
 				{/* Section for navigation to other content */}
-				<div className="flex justify-center items-center py-10 z-10">
-					<span className="mr-3 text-neutral-300">
+				<div className="flex justify-center items-center py-15 z-10">
+					<span className="mr-3 lg:text-2xl md:text-xl sm:text-lg text-neutral-300">
 						Interested in my creative projects?
 					</span>
 					<button
-						onClick={() => router.push("/more-projects")} // Redirects to /more-projects page
+						onClick={() => router.push("/Projects")} // Redirects to /more-projects page
 						className="bg-purple-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-purple-700 transition-all duration-300 shadow-md"
 					>
 						Explore My Projects
