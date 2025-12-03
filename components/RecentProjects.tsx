@@ -12,6 +12,7 @@ const RecentProjects = () => {
 	const ref = useRef(null);
 	const router = useRouter();
 	return (
+		<section id="projects">
 		<div ref={ref} className="py-20">
 			<AnimatedTitle />
 
@@ -94,6 +95,7 @@ const RecentProjects = () => {
 				</div>
 			</div>
 		</div>
+		</section>
 	);
 };
 
