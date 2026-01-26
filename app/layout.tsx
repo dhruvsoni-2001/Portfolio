@@ -1,23 +1,12 @@
 import type { Metadata } from "next";
-import { Inter} from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-// import { ThemeProvider } from "@/components/ui/theme-provider";
 
-const inter = Inter({subsets: ["latin"]});
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dhruv's Portfolio",
-  description: "Mordern Portfolio Template",
+  description: "Modern Portfolio Template",
 };
 
 export default function RootLayout({
@@ -26,9 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className}`}      >
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={inter.className} suppressHydrationWarning={true}>
         {children}
       </body>
     </html>
