@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { memo } from "react";
 import { motion } from "motion/react";
 
 type SpotlightProps = {
@@ -15,7 +15,7 @@ type SpotlightProps = {
 	className?: string;
 };
 
-export const Spotlight = ({
+const SpotlightComponent = ({
 	gradientFirst = "radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(210, 100%, 85%, .08) 0, hsla(210, 100%, 55%, .02) 50%, hsla(210, 100%, 45%, 0) 80%)",
 	gradientSecond = "radial-gradient(50% 50% at 50% 50%, hsla(210, 100%, 85%, .08) 0, hsla(210, 100%, 55%, .02) 80%, transparent 100%)",
 	gradientThird = "radial-gradient(50% 50% at 50% 50%, hsla(210, 100%, 85%, .08) 0, hsla(210, 100%, 45%, .02) 80%, transparent 100%)",
@@ -36,7 +36,7 @@ export const Spotlight = ({
 				opacity: 1,
 			}}
 			transition={{
-				duration: 1.5,
+				duration: 0.8,
 			}}
 			className={`pointer-events-none absolute inset-0 h-full w-full ${className}`}
 		>
@@ -129,3 +129,5 @@ export const Spotlight = ({
 		</motion.div>
 	);
 };
+
+export const Spotlight = memo(SpotlightComponent);

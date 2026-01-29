@@ -1,7 +1,6 @@
 import React from "react";
 import { Spotlight } from "./ui/spotlight-new";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
-import { cn } from "@/lib/utils";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa";
 
@@ -55,6 +54,7 @@ const Hero = () => {
 					<TextGenerateEffect
 						words="Building Scalable Products Engineered for Impact"
 						className="my-4 text-center text-[40px] sm:text-4xl md:text-6xl lg:text--5xl"
+						duration={0.15}
 					/>
 
 					<p className="text-center md:tracking-wider my-4 text-sm md:text-lg lg:text-2xl ">

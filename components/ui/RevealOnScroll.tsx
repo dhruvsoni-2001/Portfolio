@@ -42,8 +42,11 @@ const RevealOnScroll: React.FC<RevealProps> = ({
   style,
 }) => {
   const ref = useRef(null);
-  // THIS IS THE FIX: Changed `once: true` to `once: false`
-  const inView = useInView(ref, { once: false, amount: 0.3 });
+  // COMMENTED OUT: Repeated animations every scroll
+  // const inView = useInView(ref, { once: false, amount: 0.3 });
+  
+  // ACTIVE: Show animation only once when scrolled into view
+  const inView = useInView(ref, { once: true, amount: 0.3 });
 
   const variants = getVariants(direction);
 

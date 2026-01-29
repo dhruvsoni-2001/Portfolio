@@ -61,7 +61,11 @@ const ColourfulText = ({ text, isInView }: { text: string; isInView: boolean }) 
 
 const AnimatedTitle = () => {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: false });
+  // COMMENTED OUT: Repeated animation triggers every scroll
+  // const isInView = useInView(ref, { once: false });
+  
+  // ACTIVE: Show animation only once when scrolled into view
+  const isInView = useInView(ref, { once: true });
   const animatedText = "A Small Selection of Recent".split(" ");
 
   const wordVariants = {

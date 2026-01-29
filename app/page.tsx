@@ -1,9 +1,14 @@
+import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import RecentProjects from "@/components/RecentProjects"
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { navItems } from "@/data";
-import { FaHome } from "react-icons/fa";
+
+export const metadata = {
+	title: "Dhruv's Portfolio",
+	description: "Modern Portfolio - Building Scalable Products",
+};
 
 export default function Home() {
 	return (
@@ -14,6 +19,7 @@ export default function Home() {
 				<Hero />
 				<Grid />
 				<RecentProjects />
+				<Footer />
 			</div>
 		</main>
 	);

@@ -48,8 +48,9 @@ const Page = () => {
 						Interested in my creative projects?
 					</span>
 					<button
-						onClick={() => router.push("/Projects")} // Redirects to /more-projects page
-						className="bg-purple-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-purple-700 transition-all duration-300 shadow-md"
+						onClick={() => router.push("/Projects")}
+						// onClick={() => router.push("/Projects")} // Redirects to /more-projects page
+						className="bg-purple-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-purple-700 transition-all duration-300 shadow-md cursor-pointer"
 					>
 						Explore My Projects
 					</button>

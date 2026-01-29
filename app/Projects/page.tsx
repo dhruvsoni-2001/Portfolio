@@ -48,8 +48,9 @@ const Page = () => {
                         Interested in my Professional Experience?
                     </span>
                     <button
-                        onClick={() => router.push("/Work-Exp")} // Redirects to /Work-Exp page
-                        className="bg-purple-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-purple-700 transition-all duration-300 shadow-md"
+                        onClick={() => router.push("/Work-Exp")}
+                        // onClick={() => router.push("/Work-Exp")} // Redirects to /Work-Exp page
+                        className="bg-purple-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-purple-700 transition-all duration-300 shadow-md cursor-pointer"
                     >
                         Explore My Professional Experience
                     </button>
