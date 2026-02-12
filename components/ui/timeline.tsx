@@ -3,12 +3,12 @@
 // incorporating scroll-driven animations and flexible content display.
 "use client";
 import {
-	useMotionValueEvent,
 	useScroll,
 	useTransform,
 	motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 // FIX: Define a more generic type that can handle both work experience and projects.
 // This makes the component flexible and reusable.
 export interface TimelineEntry {
@@ -73,7 +73,7 @@ export const Timeline = ({ data, title, subtitle }: { data: TimelineEntry[], tit
 
             {/* Main timeline content area */}
             <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
-                {data.map((item, index) => (
+                {data.map((item) => (
                     <div
                         key={item.id}
                         className="flex justify-start pt-10 md:pt-40 md:gap-10"
@@ -87,7 +87,7 @@ export const Timeline = ({ data, title, subtitle }: { data: TimelineEntry[], tit
                                 {item.startDate}
                             </h3>
                             {item.img && (
-                                <img
+                                <Image
                                     src={item.img}
                                     alt={item.company || item.clientName || "Logo"}
                                     width={100}
@@ -126,7 +126,7 @@ export const Timeline = ({ data, title, subtitle }: { data: TimelineEntry[], tit
                             )}
                             {item.altImg && (
                                 <div className="mt-4">
-                                    <img
+                                    <Image
                                         src={item.altImg}
                                         alt={`${item.jobTitle || item.projectTitle} related image`}
                                         width={500}

@@ -73,7 +73,7 @@ export const projects = [
   {
     id: 1,
     title: "An Alarms Clock for Productivity",
-    des: "Experince the real power of the Pomodoro Technique with this productivity app. It can Act as your personal Assistant to help you get things done in a more efficient way. You Can Download this app in the Mobile As well.",
+    des: "An Alarm Clock for Productivity is a productivity app that helps you get things done in a more efficient way.",
     img: "/p1.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
     link: "https://github.com/dhruvsoni-2001/alarmclock",
@@ -88,9 +88,9 @@ export const projects = [
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
+    title: "Live Gold Silver Rate App",
+    des: "A REAL-time Gold and Silver Rate App. This app is built as a PWA and can be installed on mobile devices. It is built using the latest tech stack and features a modern UI.",
+    img: "/shivam.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "https://github.com/adrianhajdin/ai_saas_app",
   },
@@ -107,34 +107,34 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "We Collaborated with Dhruv on a project and were impressed with his work ethic and dedication. He is a valuable asset to any team. From the first interaction, Dhruv was professional, responsive, and clearly passionate about his work. He consistently went above and beyond to ensure our project was a success, and his technical skills are top-notch. I would highly recommend Dhruv to anyone looking for a talented and reliable developer.",
+    name: "Aaryan Soni",
+    title: "Vice President of Shivam Gold",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "We were looking for a developer who could maintain our website and provide us with the best possible service. Dhruv did an excellent job and we are very happy with his work. He was always available to help us with any issues we had and his response time was excellent.",
+    name: "Rakesh patel",
+    title: "Owner of PJM Exports",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "We both worked on this small project together. It was a great experience working with him. He helped me a lot in Development of the project and I am grateful to him for that. It was my First Project 'Aven Pharmaceuticals' and he was the one who guided me through it also helped me in the project.",
+    name: "Jay Sadhu",
+    title: "DevOps Enginner",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "We hired Dhruv to our company to work on a project and he did an excellent job. He was always available to help us with any issues we had and his response time was excellent. He is a valuable asset to any team. From the first interaction, Dhruv was professional, responsive, and clearly passionate about his work. He consistently went above and beyond to ensure our project was a success, and his technical skills are top-notch. I would highly recommend Dhruv to anyone looking for a talented and reliable developer.",
+    name: "Anil Nayer",
+    title: "Director of OpsXpress",
   },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
+  // {
+  //   quote:
+  //     "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+  //   name: "Michael Johnson",
+  //   title: "Director of AlphaStream Technologies",
+  // },
 ];
 
 export const companies = [
@@ -207,13 +207,13 @@ export const socialMedia = [
     img: "/git.svg",
     link: "https://github.com/dhruvsoni-2001",
   },
+  // {
+  //   id: 2,
+  //   img: "/twit.svg",
+  //   link: "https://x.com/DhruvSoni15176",
+  // },
   {
     id: 2,
-    img: "/twit.svg",
-    link: "https://twitter.com/DhruvSoni15176",
-  },
-  {
-    id: 3,
     img: "/link.svg",
     link: "https://www.linkedin.com/in/dhruv-soni-15176a238/",
   },

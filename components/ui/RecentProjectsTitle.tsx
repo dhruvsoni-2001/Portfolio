@@ -3,8 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, useInView, Easing } from "framer-motion";
 
-const ColourfulText = ({ text, isInView }: { text: string; isInView: boolean }) => {
-  const colors = [
+const colors = [
   "#8A2BE2", // Electric Purple
   "#7FFFD4", // Aqua Mint
   "#FF6EC7", // Neon Pink
@@ -16,6 +15,8 @@ const ColourfulText = ({ text, isInView }: { text: string; isInView: boolean }) 
   "#00CED1", // Dark Turquoise
   "#DA70D6", // Orchid
 ];
+
+const ColourfulText = ({ text, isInView }: { text: string; isInView: boolean }) => {
   const [currentColors, setCurrentColors] = useState(colors);
 
   useEffect(() => {

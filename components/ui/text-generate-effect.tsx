@@ -29,7 +29,7 @@ export const TextGenerateEffect = ({
 				delay: stagger(0.05),
 			}
 		);
-	}, [scope.current]);
+	}, [scope, animate, filter, duration]);
 
 	const highlightWords: { [key: string]: string } = {
 		products: "text-purple-600",

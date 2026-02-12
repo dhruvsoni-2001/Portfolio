@@ -6,12 +6,10 @@ import { projects } from "@/data";
 import AnimatedTitle from "./ui/RecentProjectsTitle";
 import { PinContainer } from "./ui/Pin";
 import RevealOnScroll from "./ui/RevealOnScroll";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const RecentProjects = () => {
 	const ref = useRef(null);
-	const router = useRouter();
 	return (
 		<section id="projects">
 			<div ref={ref} className="py-20">
@@ -26,7 +24,7 @@ const RecentProjects = () => {
 							<RevealOnScroll direction="left" delay={0.2} duration={0.6}>
 								<PinContainer title={item.title} href={item.link}>
 									{/* Top image container */}
-									<div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+									<div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[15vh] lg:h-[20vh] mb-10">
 										<div
 											className="relative w-full h-full overflow-hidden lg:rounded-3xl"
 											style={{ backgroundColor: "#13162D" }}
@@ -44,7 +42,7 @@ const RecentProjects = () => {
 											alt={item.title}
 											width={400}
 											height={300}
-											className="z-10 absolute bottom-0"
+											className="z-10 absolute bottom-0 w-full h-full object-contain"
 											loading="lazy"
 										/>
 									</div>
@@ -68,12 +66,12 @@ const RecentProjects = () => {
 											{item.iconLists.map((icon, index) => (
 												<div
 													key={index}
-													className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+													className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center relative"
 													style={{
 														transform: `translateX(-${5 * index + 2}px)`,
 													}}
 												>
-													<img src={icon} alt={`icon-${index}`} className="p-2" />
+													<Image src={icon} alt={`icon-${index}`} className="p-2" fill />
 												</div>
 											))}
 										</div>

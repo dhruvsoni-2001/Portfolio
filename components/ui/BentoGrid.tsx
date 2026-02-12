@@ -5,12 +5,12 @@ import { IoCopyOutline } from "react-icons/io5";
 
 // Also install this npm i --save-dev @types/react-lottie
 import Lottie from "lottie-react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
 import { BackgroundGradientAnimation } from "./backgroundGradiantAnimation";
 import MagicButton from "./MagicButton";
-import { Globe } from "./globe";
 import { GlobeDemo } from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import RevealOnScroll from "./RevealOnScroll";
@@ -61,15 +61,6 @@ export const BentoGridItem = ({
 
 	const [copied, setCopied] = useState(false);
 
-	const defaultOptions = {
-		loop: copied,
-		autoplay: copied,
-		// animationData: animationData,
-		rendererSettings: {
-			preserveAspectRatio: "xMidYMid slice",
-		},
-	};
-
 	const handleCopy = () => {
 		const text = "dhruvsoni15175@gmail.com";
 		navigator.clipboard.writeText(text);
@@ -95,9 +86,10 @@ export const BentoGridItem = ({
 			<div className={`${id === 6 && "flex justify-center"} h-full`}>
 				<div className="w-full h-full absolute">
 					{img && (
-						<img
+						<Image
 							src={img}
 							alt={img}
+							fill
 							className={cn(imgClassName, "object-cover object-center ")}
 						/>
 					)}
@@ -108,10 +100,10 @@ export const BentoGridItem = ({
 					} `}
 				>
 					{spareImg && (
-						<img
+						<Image
 							src={spareImg}
 							alt={spareImg}
-							//   width={220}
+							fill
 							className="object-cover object-center w-full h-full"
 						/>
 					)}
