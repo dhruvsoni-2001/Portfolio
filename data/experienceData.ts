@@ -16,48 +16,9 @@ export interface ExperienceEntry {
 export const experienceData: ExperienceEntry[] = [
   {
     id: 1,
-    jobTitle: "Technical Operation Engineer",
-    startDate: "May 2025", // Using a more readable format for display
-    endDate: "July 2025",
-    company: "OpsXpress LLP",
-    description: `
-      During my time at OpsXpress LLP, I focused heavily on Learning and Managing the Operations for the Clients. 
-      This role allowed me to dive deep into enterprise-level solutions for Infrastructure and how to optimize them. This role was pivotal in shaping my understanding of client needs and operational efficiency. 
-    `,
-    bulletPoints: [
-      "Learned and managed the operations for various clients, focusing on infrastructure optimization.",
-      "Implemented new monitoring tools to enhance system performance and reliability.",
-      "Collaborated with the different teams to streamline processes and improve service delivery, and solving the Critical incidents, that arose during the operations.",
-      "Participated in best practices for incident management and response.",
-      "Created documentation for operational procedures and troubleshooting guides. Created over 300+ tickets for various incidents.",
-    ],
-    img: "https://placehold.co/100x100/A0A0A0/FFFFFF?text=TSI", // Placeholder for company logo or relevant icon
-    altImg: "https://placehold.co/100x100/C0C0C0/FFFFFF?text=TSI_ALT",
-  },
-  {
-    id: 2,
-    jobTitle: "Junior Full Stack Developer",
-    startDate: "Sep 2022",
-    endDate: "Dec 2022",
-    company: "Innovative Web Solutions",
-    description: `
-      As a junior developer, I contributed to various stages of the software development lifecycle, from conceptualization to deployment.
-      This was a foundational role where I gained practical experience in both front-end and back-end technologies.
-    `,
-    bulletPoints: [
-      "Assisted in developing interactive user interfaces using React.js and basic HTML/CSS.",
-      "Worked on basic server-side logic with Node.js, handling data processing and API calls.",
-      "Learned about version control using Git and collaborative development workflows.",
-      "Helped debug and troubleshoot application errors, ensuring smooth functionality.",
-    ],
-    img: "https://placehold.co/100x100/808080/FFFFFF?text=IWS",
-    altImg: "https://placehold.co/100x100/909090/FFFFFF?text=IWS_ALT",
-  },
-  {
-    id: 3,
     jobTitle: "Freelance Web Designer",
-    startDate: "Apr 2021",
-    endDate: "Aug 2022",
+    startDate: "August 2025",
+    endDate: "Present",
     company: "Self-Employed",
     description: `
       During this period, I took on various freelance projects, gaining diverse experience in client communication, project management, and custom web development.
@@ -69,7 +30,76 @@ export const experienceData: ExperienceEntry[] = [
       "Managed client expectations, gathered requirements, and provided ongoing support.",
       "Focused on SEO best practices to improve website visibility.",
     ],
-    img: "https://placehold.co/100x100/606060/FFFFFF?text=Free",
-    altImg: "https://placehold.co/100x100/707070/FFFFFF?text=Free_ALT",
+    // img: "https://placehold.co/100x100/606060/FFFFFF?text=Free",
+    // altImg: "https://placehold.co/100x100/707070/FFFFFF?text=Free_ALT",
   },
+  {
+    id: 2,
+    jobTitle: "Technical Operations Engineer",
+    startDate: "May 2024",
+    endDate: "August 2025",
+    company: "OpsXpress LLP",
+    description: `
+      Worked as a Technical Operations Engineer managing client infrastructure, monitoring systems, and ensuring high availability of enterprise applications. 
+      Played a key role in incident management, cross-team coordination, and operational optimization while gaining hands-on exposure to cloud platforms like AWS and monitoring tools like Datadog. 
+      `,
+    bulletPoints: [
+      "Monitored and managed enterprise-level infrastructure, ensuring system reliability and performance across multiple client environments.",
+      "Handled end-to-end incident management including detection, analysis, resolution, and reporting of critical production issues.",
+      "Created, tracked, and resolved 300+ incident and service tickets, improving response time and operational efficiency.",
+      "Collaborated closely with development teams and leadership to diagnose issues, implement fixes, and streamline operational workflows.",
+      "Implemented and utilized monitoring tools such as Datadog to enhance system visibility, alerting, and performance tracking.",
+      "Developed detailed documentation, SOPs, and troubleshooting guides to standardize operational processes.",
+      "Prepared reports and presentations for stakeholders, providing insights into system performance and incident trends.",
+      "Gained hands-on experience with AWS services, contributing to cloud infrastructure management and optimization.",
+      "Completed HIPAA training to ensure compliance with data security and privacy standards in client environments."
+    ],
+    img: "/opsLogo.jpg", // Placeholder for company logo or relevant icon
+    altImg: "/opsLogo.jpg",
+  },
+  {
+    id: 3,
+    jobTitle: "Junior .NET Developer",
+    startDate: "January 2023",
+    endDate: "March 2024",
+    company: "WebLine India Pvt. Ltd",
+    description: `
+      Worked as a Junior .NET Developer contributing to backend API development, system maintenance, and application enhancements. 
+      Gained hands-on experience in building scalable Web APIs, implementing authentication mechanisms, and working with relational databases.
+    `,
+    bulletPoints: [
+      "Developed and maintained scalable RESTful APIs using .NET Core Web API, enabling efficient backend operations and seamless data exchange.",
+      "Implemented JWT-based authentication and authorization to ensure secure user access and robust session management.",
+      "Designed and optimized CRUD operations in MS SQL Server, improving query performance and overall data handling efficiency.",
+      "Maintained and refactored a legacy VB.NET application, improving system stability while ensuring continuity of critical business features.",
+      "Collaborated with cross-functional teams to diagnose and resolve complex application-level and system-level issues.",
+      "Integrated React.js frontend with backend APIs, ensuring smooth data flow and consistent user experience across the application.",
+      "Diagnosed and resolved device recognition issues by fixing Windows registry conflicts in a desktop application environment.",
+      "Utilized Git for version control, contributing to collaborative development workflows and efficient code management.",
+      "Troubleshot and resolved production issues, improving system reliability and minimizing downtime.",
+      "Applied clean coding principles to build maintainable, scalable, and production-ready code.",
+      "Demonstrated strong adaptability by quickly learning new technologies and effectively handling evolving project requirements.",
+    ],
+    img: "/weblineindia_logo.jpg",
+    // altImg: "/weblineindia_logo.jpg",
+  },
+  // {
+  //   id: 3,
+  //   jobTitle: "Freelance Web Designer",
+  //   startDate: "Apr 2021",
+  //   endDate: "Aug 2022",
+  //   company: "Self-Employed",
+  //   description: `
+  //     During this period, I took on various freelance projects, gaining diverse experience in client communication, project management, and custom web development.
+  //     It was a valuable experience in self-management and delivering bespoke solutions.
+  //   `,
+  //   bulletPoints: [
+  //     "Designed and developed custom websites for small businesses and individuals.",
+  //     "Utilized WordPress, HTML, CSS, and JavaScript to create responsive and user-friendly sites.",
+  //     "Managed client expectations, gathered requirements, and provided ongoing support.",
+  //     "Focused on SEO best practices to improve website visibility.",
+  //   ],
+  //   img: "https://placehold.co/100x100/606060/FFFFFF?text=Free",
+  //   altImg: "https://placehold.co/100x100/707070/FFFFFF?text=Free_ALT",
+  // },
 ];

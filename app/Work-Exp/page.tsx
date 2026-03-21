@@ -34,6 +34,14 @@ const Page = () => {
           `z-10` ensures it's above the background effects. */}
 			<div className="pb-20 pt-36 w-full max-w-5xl relative z-10">
 				
+				{/* Back to Home Button */}
+				<button 
+					onClick={() => router.push("/")}
+					className="absolute top-10 left-5 md:left-0 z-50 bg-black/50 border border-white/10 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/10 transition-all shadow-md flex items-center gap-2 cursor-pointer"
+				>
+					<span>&larr;</span> Back to Home
+				</button>
+
 					{/* The Timeline component is rendered here, receiving the work experience data */}
 					<Timeline
 						data={experienceData}
@@ -45,7 +53,7 @@ const Page = () => {
 				{/* Section for navigation to other content */}
 				<div className="flex justify-center items-center py-15 z-10">
 					<span className="mr-3 lg:text-2xl md:text-xl sm:text-lg text-neutral-300">
-						Interested in my creative projects?
+						Explore real-world projects and technical implementations
 					</span>
 					<button
 						onClick={() => router.push("/Projects")}

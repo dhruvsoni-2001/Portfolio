@@ -50,7 +50,7 @@ export const Timeline = ({ data, title, subtitle }: { data: TimelineEntry[], tit
         offset: ["start 10%", "end end"],
     });
 
-    const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
+    const heightTransform = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
     const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
     return (
@@ -58,7 +58,7 @@ export const Timeline = ({ data, title, subtitle }: { data: TimelineEntry[], tit
             className="w-full font-sans md:px-10
                        rounded-2xl shadow-lg
                        backdrop-blur-xl border border-white/10
-                       p-6 md:p-10"
+                       p-6 md:p-10 overflow-hidden relative"
             ref={containerRef}
         >
             {/* Introduction section */}
@@ -140,10 +140,7 @@ export const Timeline = ({ data, title, subtitle }: { data: TimelineEntry[], tit
                 ))}
                 {/* The static background line of the timeline */}
                 <div
-                    style={{
-                        height: height + "px",
-                    }}
-                    className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
+                    className="absolute md:left-8 left-8 top-0 bottom-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
                 >
                     {/* The animated foreground line */}
                     <motion.div

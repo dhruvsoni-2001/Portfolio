@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 /* Base variables (can be your dark theme defaults) */
 :root {
-	--background: #0a0a0a; /* Dark background */
-	--foreground: #ededed; /* Light foreground */
-	--color-bg-black-100: #000319;
+	--background: #0d1117; /* GitHub Dark background */ /*--background: #0a0a0a; /* Dark background */
+	--foreground: #c9d1d9; /* GitHub Light foreground */ /*--foreground: #ededed; /* Light foreground */
+	--color-bg-black-100: #0d1117; /* GitHub Dark background */ /*--color-bg-black-100: #000319;*/
 	--color-black-200: rgba(17, 25, 40, 0.75);
 	--color-black-300: rgba(255, 255, 255, 0.125);
 	--color-white-100: #bec1dd;
