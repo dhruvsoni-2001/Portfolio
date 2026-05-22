@@ -13,6 +13,7 @@ const Grid = () => {
 						description={item.description}
 						className={item.className}
 						img={item.img}
+						imgLight={item.imgLight}
 						imgClassName={item.imgClassName}
 						titleClassName={item.titleClassName}
 						spareImg={item.spareImg}					/>

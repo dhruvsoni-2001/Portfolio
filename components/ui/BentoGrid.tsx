@@ -5,12 +5,12 @@ import { IoCopyOutline } from "react-icons/io5";
 
 // Also install this npm i --save-dev @types/react-lottie
 import Lottie from "lottie-react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
 import { BackgroundGradientAnimation } from "./backgroundGradiantAnimation";
 import MagicButton from "./MagicButton";
-import { Globe } from "./globe";
 import { GlobeDemo } from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import RevealOnScroll from "./RevealOnScroll";
@@ -42,6 +42,7 @@ export const BentoGridItem = ({
 	description,
 	//   remove unecessary things here
 	img,
+	imgLight,
 	imgClassName,
 	titleClassName,
 	spareImg,
@@ -51,6 +52,7 @@ export const BentoGridItem = ({
 	title?: string | React.ReactNode;
 	description?: string | React.ReactNode;
 	img?: string;
+	imgLight?: string;
 	imgClassName?: string;
 	titleClassName?: string;
 	spareImg?: string;
@@ -61,15 +63,6 @@ export const BentoGridItem = ({
 
 	const [copied, setCopied] = useState(false);
 
-	const defaultOptions = {
-		loop: copied,
-		autoplay: copied,
-		// animationData: animationData,
-		rendererSettings: {
-			preserveAspectRatio: "xMidYMid slice",
-		},
-	};
-
 	const handleCopy = () => {
 		const text = "dhruvsoni15175@gmail.com";
 		navigator.clipboard.writeText(text);
@@ -79,42 +72,46 @@ export const BentoGridItem = ({
 	return (
 		<RevealOnScroll direction="scale"
 			className={cn(
-				// remove p-4 rounded-3xl dark:bg-black dark:border-white/[0.2] bg-white  border border-transparent, add border border-white/[0.1] overflow-hidden relative
-				"row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
+				"row-span-1 relative overflow-hidden rounded-3xl border border-black/[0.1] dark:border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 text-stone-900 dark:text-white",
 				className
 			)}
 			style={{
-				//   add these two
-				//   you can generate the color from here https://cssgradient.io/
-				background: "rgb(4,7,29)",
-				backgroundColor:
-					"linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+				background: "var(--bento-bg-gradient)",
 			}}
 		>
 			{/* add img divs */}
 			<div className={`${id === 6 && "flex justify-center"} h-full`}>
 				<div className="w-full h-full absolute">
-					{img && (
-						<img
+					{/* If BOTH images exist, render both but hide one based on the theme */}
+					{img && imgLight ? (
+						<>
+							{/* Light Mode Image: Visible by default, hidden in dark mode */}
+							<Image
+								src={imgLight}
+								alt="Light mode graphic"
+								fill
+								sizes="(max-width: 768px) 100vw, 50vw"
+								className={cn(imgClassName, "object-cover object-center block dark:hidden")}
+							/>
+							{/* Dark Mode Image: Hidden by default, visible in dark mode */}
+							<Image
+								src={img}
+								alt="Dark mode graphic"
+								fill
+								sizes="(max-width: 768px) 100vw, 50vw"
+								className={cn(imgClassName, "object-cover object-center hidden dark:block")}
+							/>
+						</>
+					) : img ? (
+						<Image
+							// Fallback if only one image is provided (applies to both themes)
 							src={img}
-							alt={img}
-							className={cn(imgClassName, "object-cover object-center ")}
+							alt="Bento graphic"
+							fill
+							sizes="(max-width: 768px) 100vw, 50vw"
+							className={cn(imgClassName, "object-cover object-center")}
 						/>
-					)}
-				</div>
-				<div
-					className={`absolute right-0 -bottom-5 ${
-						id === 5 && "w-full opacity-80"
-					} `}
-				>
-					{spareImg && (
-						<img
-							src={spareImg}
-							alt={spareImg}
-							//   width={220}
-							className="object-cover object-center w-full h-full"
-						/>
-					)}
+					) : null}
 				</div>
 				{id === 6 && (
 					// add background animation , remove the p tag
@@ -130,13 +127,21 @@ export const BentoGridItem = ({
 					)}
 				>
 					{/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-					<div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+					<div
+						className={cn(
+							"font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm z-10",
+							/* Force description to light gray if id is 6 */
+							id === 6 ? "text-white/80" : "text-stone-600 dark:text-[#C1C2D3]"
+						)}
+					>
 						{description}
 					</div>
-					{/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
-					{/* remove mb-2 mt-2 */}
 					<div
-						className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
+						className={cn(
+							"font-sans text-lg lg:text-3xl max-w-96 font-bold z-10",
+							// 10 Steps Ahead: Force pure white text ONLY for the email card
+							id === 6 ? "text-white" : "" 
+						)}
 					>
 						{title}
 					</div>
@@ -152,7 +157,7 @@ export const BentoGridItem = ({
 								{leftLists.map((item, i) => (
 									<span
 										key={`left-${i}`}
-										className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+										className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-black/5 dark:bg-[#10132E] text-stone-800 dark:text-white"
 									>
 										{item}
 									</span>
@@ -164,7 +169,7 @@ export const BentoGridItem = ({
 								{centerLists.map((item, i) => (
 									<span
 										key={`center-${i}`}
-										className="lg:py-4 lg:px-4 py-2 px-3 text-xs lg:text-base font-semibold opacity-70 rounded-lg text-center bg-[#0f112c]"
+										className="lg:py-4 lg:px-4 py-2 px-3 text-xs lg:text-base font-semibold opacity-70 rounded-lg text-center bg-black/10 dark:bg-[#0f112c] text-stone-900 dark:text-white"
 									>
 										{item}
 									</span>
@@ -176,7 +181,7 @@ export const BentoGridItem = ({
 								{rightLists.map((item, i) => (
 									<span
 										key={`right-${i}`}
-										className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+										className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-black/5 dark:bg-[#10132E] text-stone-800 dark:text-white"
 									>
 										{item}
 									</span>
@@ -212,8 +217,10 @@ export const BentoGridItem = ({
 								icon={<IoCopyOutline />}
 								position="left"
 								handleClick={handleCopy}
-								otherClasses="!bg-[#161A31]"
-							/>
+								// FIX: Removed the light-mode text-stone-900 override. 
+								// Forced it to a dark, glassy background with white text permanently.
+								otherClasses="!bg-[#161A31]/80 backdrop-blur-md !text-white border border-white/10"
+			/>
 						</div>
 					)}
 				</div>

@@ -1,18 +1,52 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Base variables (can be your dark theme defaults) */
 :root {
-	--background: #0a0a0a; /* Dark background */
-	--foreground: #ededed; /* Light foreground */
-	--color-bg-black-100: #000319;
+	/* Light Mode Colors (Warm Cream/Minimalist) */
+	--background: #f5f3ef;
+	--foreground: #1c1917; /* stone-900 */
+	--color-bg-black-100: #f5f3ef;
+	--color-black-200: rgba(245, 243, 239, 0.75);
+	--color-black-300: rgba(0, 0, 0, 0.08);
+	--color-white-100: #44403c; /* stone-700 */
+	--color-white-200: #57534e; /* stone-600 */
+	--color-blue-100: #292524; /* darker accent */
+
+	--border: hsl(220 14% 90%);
+	--input: hsl(220 14% 90%);
+	--ring: hsl(220 13% 80%);
+	--primary: hsl(262 83% 40%);
+	--primary-foreground: hsl(0 0% 100%);
+	--secondary: hsl(240 10% 90%);
+	--secondary-foreground: hsl(240 10% 25%);
+	--destructive: hsl(0 84% 60%);
+	--destructive-foreground: hsl(0 0% 100%);
+	--muted: hsl(220 14% 90%);
+	--muted-foreground: hsl(220 10% 40%);
+	--accent: hsl(262 83% 90%);
+	--accent-foreground: hsl(262 83% 30%);
+	--popover: hsl(0 0% 100%);
+	--popover-foreground: hsl(240 10% 10%);
+	--card: hsl(0 0% 100%);
+	--card-foreground: hsl(240 10% 10%);
+
+	--bento-bg-gradient: linear-gradient(90deg, rgba(245, 243, 239, 1) 0%, rgba(235, 230, 225, 1) 100%);
+}
+
+.dark {
+	/* Dark Mode Colors (GitHub Dark/Indigo) */
+	--background: #0d1117;
+	--foreground: #c9d1d9;
+	--color-bg-black-100: #0d1117;
 	--color-black-200: rgba(17, 25, 40, 0.75);
 	--color-black-300: rgba(255, 255, 255, 0.125);
 	--color-white-100: #bec1dd;
 	--color-white-200: #c1c2d3;
 	--color-blue-100: #e4ecff;
 
-	/* Add your other dark mode variables here if they are not already defined within a dark: variant in Tailwind config */
-	--border: hsl(220 14% 95%); /* Adjust these to your dark theme values */
+	--border: hsl(220 14% 95%);
 	--input: hsl(220 14% 97%);
 	--ring: hsl(220 13% 91%);
 	--primary: hsl(262 83% 58%);
@@ -29,6 +63,8 @@
 	--popover-foreground: hsl(240 10% 10%);
 	--card: hsl(0 0% 100%);
 	--card-foreground: hsl(240 10% 10%);
+
+	--bento-bg-gradient: linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%);
 }
 
 /* Remove the @media (prefers-color-scheme: dark) block entirely if you want to force dark mode.
@@ -55,9 +91,7 @@ html::-webkit-scrollbar {
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
-	/* Ensure these are correctly pointing to your font variables if you're using them */
-	/* --font-sans: var(--font-geist-sans); */
-	/* --font-mono: var(--font-geist-mono); */
+	--font-sans: var(--font-plus-jakarta), var(--font-inter), sans-serif;
 	--animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 	--animate-first: moveVertical 30s ease infinite;
 	--animate-second: moveInCircle 20s reverse infinite;
@@ -92,6 +126,11 @@ html::-webkit-scrollbar {
 	.bg-grid-small {
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='8' height='8' fill='none' stroke='%23ccc'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
 		background-repeat: repeat;
+	}
+
+	/* Text Colors */
+	.text-purple {
+		color: #CBACF9;
 	}
 
 	/* Animation Utilities */
@@ -231,3 +270,15 @@ html::-webkit-scrollbar {
 		transform: translate(calc(-50% - 0.5rem));
 	}
 }
+
+/* infinite card start */
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+ 
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
+/* infinite card end */
