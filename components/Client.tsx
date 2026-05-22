@@ -7,11 +7,18 @@ import React from "react";
 
 const Client = () => {
 	return (
-		<section id="testimonials" className="py-20">
-            <h1 className="heading">
-                Kind words from
-                <span className="text-purple"> Our Clients</span>
-            </h1>
+		<section id="testimonials" className="py-20 w-full">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+                <div className="flex items-center w-full">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 dark:text-white whitespace-nowrap pr-6 md:pr-8">
+                        Testimonials
+                    </h1>
+                    <div className="flex-grow h-[1px] bg-black/10 dark:bg-white/10"></div>
+                </div>
+                <p className="mt-4 text-stone-500 dark:text-stone-400 text-sm md:text-base">
+                    Kind words from <span className="text-purple-600 dark:text-purple-400 font-medium">Our Clients</span>
+                </p>
+            </div>
             <div className="flex flex-col items-center max-lg:mt-10">
         <div
           // remove bg-white dark:bg-black dark:bg-grid-white/[0.05], h-[40rem] to 30rem , md:h-[30rem] are for the responsive design

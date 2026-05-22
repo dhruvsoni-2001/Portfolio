@@ -32,7 +32,7 @@ const RecentProjects = () => {
                                 - 'group' enables nested hover effects.
                                 - hover:-translate-y-3 and hover:shadow-2xl give the slow pop-up effect.
                             */}
-							<div className="group relative flex flex-col bg-[#04071D] border border-white/10 rounded-2xl overflow-hidden hover:-translate-y-3 hover:shadow-[0_15px_40px_rgba(139,92,246,0.2)] transition-all duration-500 ease-out h-full cursor-pointer">
+							<div className="group relative flex flex-col dark:bg-[#04071D] bg-stone-50 border border-black/10 dark:border-white/10 rounded-2xl overflow-hidden hover:-translate-y-3 hover:shadow-[0_15px_40px_rgba(139,92,246,0.2)] transition-all duration-500 ease-out h-full cursor-pointer">
 								{/* Make the entire card clickable */}
 								<Link
 									href={item.link}
@@ -41,7 +41,7 @@ const RecentProjects = () => {
 									className="flex flex-col h-full"
 								>
 									{/* Image Container: Fixed height, fills width entirely */}
-									<div className="relative w-full h-[270px] bg-[#0c0e24] flex items-center justify-center p-4 overflow-hidden border-b border-white/5">
+									<div className="relative w-full h-[270px] dark:bg-[#0c0e24] bg-stone-200 flex items-center justify-center p-4 overflow-hidden border-b border-black/5 dark:border-white/5">
 	<Image
 		src={item.img}
 		alt={item.title}
@@ -56,13 +56,13 @@ const RecentProjects = () => {
 									{/* Content Container */}
 									<div className="p-6 flex flex-col flex-grow justify-between">
 										<div>
-											<h1 className="font-bold text-xl md:text-2xl text-white line-clamp-1 mb-3">
+											<h1 className="font-bold text-xl md:text-2xl text-stone-900 dark:text-white line-clamp-1 mb-3">
 												{item.title}
 											</h1>
 											{/* 10 Steps Ahead: Removed line-clamp to let the description breathe, 
         added min-h to ensure cards stay relatively even, 
         and reduced text size slightly on mobile for better fit */}
-											<p className="text-[#BEC1DD] text-xs md:text-sm font-normal mb-6 min-h-[5rem]">
+											<p className="dark:text-[#BEC1DD] text-stone-600 text-xs md:text-sm font-normal mb-6 min-h-[5rem]">
 												{item.des}
 											</p>
 										</div>
@@ -73,7 +73,7 @@ const RecentProjects = () => {
 												{item.iconLists.map((icon, i) => (
 													<div
 														key={i}
-														className="border border-white/20 rounded-full bg-black w-8 h-8 md:w-10 md:h-10 flex justify-center items-center relative -ml-2 first:ml-0"
+														className="border border-black/10 dark:border-white/20 rounded-full dark:bg-black bg-stone-100 w-8 h-8 md:w-10 md:h-10 flex justify-center items-center relative -ml-2 first:ml-0"
 													>
 														<Image
 															src={icon}
@@ -104,7 +104,7 @@ const RecentProjects = () => {
 				</div>
 
 				<div className="flex justify-center items-center mt-16 relative z-50">
-					<span className="mr-3 text-white/80">
+					<span className="mr-3 dark:text-white/80 text-stone-700">
 						For more about me, My Projects & work{" "}
 					</span>
 					<Link

@@ -1,8 +1,8 @@
 export const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
-  { name: "Contact", link: "#contact" },
+  { name: "About", link: "/#about" },
+  { name: "Projects", link: "/#projects" },
+  { name: "Testimonials", link: "/#testimonials" },
+  { name: "Contact", link: "/#contact" },
 ];
 
 export const gridItems = [
@@ -13,7 +13,8 @@ export const gridItems = [
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "/b1.svg",
+    img: "/b1.svg", // for Dark Background
+    imgLight: "/computerDesk.jpg", // for Light Background
     spareImg: "",
   },
   {
@@ -70,46 +71,46 @@ export const gridItems = [
 ];
 
 export const projects = [
-//   {
-//     id: 1,
-//     title: "An Alarms Clock for Productivity",
-//     des: "An Alarm Clock for Productivity is a productivity app that helps you get things done in a more efficient way.",
-//     img: "/p1.svg",
-//     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
-//     link: "https://github.com/dhruvsoni-2001/alarmclock",
-//   },
-//   {
-//     id: 2,
-//     title: "Aaven Pharmaceuticals",
-//     des: "A website for Aaven Pharmaceuticals with multiple pages and features.",
-//     img: "/aaven.svg",
-//     iconLists: ["/html.svg", "/css.svg", "/js.svg", "/wordpress.svg"],
-//     link: "https://aavenpharmaceutical.com/",
-//   },
-//   {
-//     id: 3,
-//     title: "Live Gold Silver Rate App",
-//     des: "A REAL-time Gold and Silver Rate App. This app is built as a PWA and can be installed on mobile devices. It is built using the latest tech stack and features a modern UI.",
-//     img: "/shivam.png",
-//     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-//     link: "https://github.com/adrianhajdin/ai_saas_app",
-//   },
-//   {
-//     id: 4,
-//     title: "Animated Apple Iphone 3D Website",
-//     des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-//     img: "/p4.svg",
-//     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-//     link: "https://github.com/adrianhajdin/iphone",
-//   },
-// ];
+  //   {
+  //     id: 1,
+  //     title: "An Alarms Clock for Productivity",
+  //     des: "An Alarm Clock for Productivity is a productivity app that helps you get things done in a more efficient way.",
+  //     img: "/p1.svg",
+  //     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+  //     link: "https://github.com/dhruvsoni-2001/alarmclock",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Aaven Pharmaceuticals",
+  //     des: "A website for Aaven Pharmaceuticals with multiple pages and features.",
+  //     img: "/aaven.svg",
+  //     iconLists: ["/html.svg", "/css.svg", "/js.svg", "/wordpress.svg"],
+  //     link: "https://aavenpharmaceutical.com/",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Live Gold Silver Rate App",
+  //     des: "A REAL-time Gold and Silver Rate App. This app is built as a PWA and can be installed on mobile devices. It is built using the latest tech stack and features a modern UI.",
+  //     img: "/shivam.png",
+  //     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+  //     link: "https://github.com/adrianhajdin/ai_saas_app",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Animated Apple Iphone 3D Website",
+  //     des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+  //     img: "/p4.svg",
+  //     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+  //     link: "https://github.com/adrianhajdin/iphone",
+  //   },
+  // ];
 
   {
     id: 1,
     title: "Nexclock: AI-Powered Productivity Suite",
     des: "A comprehensive cross-platform productivity application. Features a React Native UI with precise alarm functionality built in native Kotlin. Integrated with SDLC tools, a reminder calendar for appointments, and a built-in AI chatbot capable of interfacing with free APIs and guiding users to run small, local LLMs (300M to 1B parameters).",
-    img: "/p1.svg", 
-    iconLists: ["/re.svg", "/kotlin.svg", "/tail.svg", "/ts.svg"], 
+    img: "/p1.svg",
+    iconLists: ["/re.svg", "/kotlin.svg", "/tail.svg", "/ts.svg"],
     link: "https://github.com/dhruvsoni-2001/alarmclock",
   },
   {
@@ -125,7 +126,7 @@ export const projects = [
     title: "Shivam Gold Tharad",
     des: "A real-time, precision-driven tracking platform displaying live gold and silver bullion market rates. Engineered to deliver highly accurate market data with a modern, responsive user interface.",
     img: "/shivamgold.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/js.svg"], 
+    iconLists: ["/re.svg", "/tail.svg", "/js.svg"],
     link: "https://shivamgold.store/", // Update this link when ready
   },
   {

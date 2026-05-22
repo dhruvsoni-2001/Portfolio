@@ -32,16 +32,17 @@ export const TextGenerateEffect = ({
 	}, [scope, animate, filter, duration]);
 
 	const highlightWords: { [key: string]: string } = {
-		products: "text-purple-600",
-		impact: "text-green-400",
+		products: "text-purple-600 dark:text-purple-400",
+		impact: "text-emerald-600 dark:text-emerald-400",
+		projects: "text-purple-600 dark:text-purple-400",
 	};
 	const renderWords = () => {
 		return (
-			<motion.div ref={scope} className="flex flex-wrap justify-center gap-1">
+			<motion.div ref={scope} className="flex flex-wrap justify-center gap-1.5 md:gap-2">
 				{wordsArray.map((word, idx) => {
 					const cleanWord = word.toLowerCase().replace(/[^a-z]/gi, ""); // Remove punctuation
 					const highlightClass =
-						highlightWords[cleanWord] || "text-white  opacity-0";
+						highlightWords[cleanWord] || "text-stone-900 dark:text-white opacity-0";
 
 					return (
 						<motion.span

@@ -5,28 +5,27 @@ import React from "react";
 import { useRouter } from "next/navigation"; // Import useRouter for navigation
 // Importing the Timeline component
 import { Timeline } from "@/components/ui/timeline";
-
-// Importing the work experience data
-import { experienceData } from "@/data/experienceData"; // Adjust path as needed
+import { TopNavbar } from "@/components/ui/TopNavbar";
+import { navItems } from "@/data";
+import { experienceData } from "@/data/experienceData";
 
 const Page = () => {
 	const router = useRouter(); // Initialize the router
 
 	return (
-		<main className="relative bg-[#000319] flex flex-col min-h-screen justify-center items-center overflow-x-hidden overflow-y-visible mx-auto sm:px-10 px-5 font-sans">
+		<main className="relative bg-black-100 flex flex-col min-h-screen justify-center items-center overflow-x-hidden overflow-y-visible mx-auto sm:px-10 px-5 font-sans">
 			{/* Fixed background with grid and radial gradient effects for visual flair */}
-			<div className="fixed inset-0 z-0 w-full h-screen dark:bg-[#000319] dark:bg-grid-white/[0.05] bg-grid-black/[0.05] flex items-center justify-center">
+			<div className="fixed inset-0 z-0 w-full h-screen bg-black-100 flex items-center justify-center">
 				{/* Grid pattern overlay for subtle texture */}
 				<div
 					className="absolute top-0 left-0 h-full w-full
-          bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]
+          bg-[linear-gradient(to_right,rgba(0,0,0,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.08)_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)]
           bg-[size:50px_50px]
           [mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]"
 				></div>
 				{/* Radial gradient mask to create a faded edge effect, blending with the background */}
 				<div
-					className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-[#000319]
-          bg-[#000319] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
+					className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black-100 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
 				/>
 			</div>
 
@@ -34,13 +33,7 @@ const Page = () => {
           `z-10` ensures it's above the background effects. */}
 			<div className="pb-20 pt-36 w-full max-w-5xl relative z-10">
 				
-				{/* Back to Home Button */}
-				<button 
-					onClick={() => router.push("/")}
-					className="absolute top-10 left-5 md:left-0 z-50 bg-black/50 border border-white/10 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/10 transition-all shadow-md flex items-center gap-2 cursor-pointer"
-				>
-					<span>&larr;</span> Back to Home
-				</button>
+				<TopNavbar navItems={navItems} />
 
 					{/* The Timeline component is rendered here, receiving the work experience data */}
 					<Timeline
