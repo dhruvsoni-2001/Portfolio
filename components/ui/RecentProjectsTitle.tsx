@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useInView, Easing } from "framer-motion";
+import { motion, useInView, Easing } from "motion/react";
 
 const colors = [
   "#8A2BE2", // Electric Purple

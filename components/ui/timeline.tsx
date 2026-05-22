@@ -6,7 +6,7 @@ import {
 	useScroll,
 	useTransform,
 	motion,
-} from "framer-motion";
+} from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 // FIX: Define a more generic type that can handle both work experience and projects.
@@ -32,13 +32,11 @@ export interface TimelineEntry {
 export const Timeline = ({ data, title, subtitle }: { data: TimelineEntry[], title: string, subtitle: string }) => {
     const ref = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
-    const [height, setHeight] = useState(0);
-
     // Effect to measure and update the height of the timeline content
     useEffect(() => {
         if (ref.current) {
             const rect = ref.current.getBoundingClientRect();
-            setHeight(rect.height);
+            // Optional: You could use rect.height here if needed
         }
     }, [ref, data.length]);
 

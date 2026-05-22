@@ -90,6 +90,7 @@ export const BentoGridItem = ({
 							src={img}
 							alt={img}
 							fill
+							sizes="(max-width: 768px) 100vw, 50vw"
 							className={cn(imgClassName, "object-cover object-center ")}
 						/>
 					)}

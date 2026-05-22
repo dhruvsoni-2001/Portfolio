@@ -70,40 +70,89 @@ export const gridItems = [
 ];
 
 export const projects = [
+//   {
+//     id: 1,
+//     title: "An Alarms Clock for Productivity",
+//     des: "An Alarm Clock for Productivity is a productivity app that helps you get things done in a more efficient way.",
+//     img: "/p1.svg",
+//     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+//     link: "https://github.com/dhruvsoni-2001/alarmclock",
+//   },
+//   {
+//     id: 2,
+//     title: "Aaven Pharmaceuticals",
+//     des: "A website for Aaven Pharmaceuticals with multiple pages and features.",
+//     img: "/aaven.svg",
+//     iconLists: ["/html.svg", "/css.svg", "/js.svg", "/wordpress.svg"],
+//     link: "https://aavenpharmaceutical.com/",
+//   },
+//   {
+//     id: 3,
+//     title: "Live Gold Silver Rate App",
+//     des: "A REAL-time Gold and Silver Rate App. This app is built as a PWA and can be installed on mobile devices. It is built using the latest tech stack and features a modern UI.",
+//     img: "/shivam.png",
+//     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+//     link: "https://github.com/adrianhajdin/ai_saas_app",
+//   },
+//   {
+//     id: 4,
+//     title: "Animated Apple Iphone 3D Website",
+//     des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+//     img: "/p4.svg",
+//     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+//     link: "https://github.com/adrianhajdin/iphone",
+//   },
+// ];
+
   {
     id: 1,
-    title: "An Alarms Clock for Productivity",
-    des: "An Alarm Clock for Productivity is a productivity app that helps you get things done in a more efficient way.",
-    img: "/p1.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+    title: "Nexclock: AI-Powered Productivity Suite",
+    des: "A comprehensive cross-platform productivity application. Features a React Native UI with precise alarm functionality built in native Kotlin. Integrated with SDLC tools, a reminder calendar for appointments, and a built-in AI chatbot capable of interfacing with free APIs and guiding users to run small, local LLMs (300M to 1B parameters).",
+    img: "/p1.svg", 
+    iconLists: ["/re.svg", "/kotlin.svg", "/tail.svg", "/ts.svg"], 
     link: "https://github.com/dhruvsoni-2001/alarmclock",
   },
   {
     id: 2,
     title: "Aaven Pharmaceuticals",
-    des: "A website for Aaven Pharmaceuticals with multiple pages and features.",
+    des: "A robust corporate website developed for a generic medicine manufacturing company based in Mehsana, exporting to Africa, Southeast Asia, and South America. Built on WordPress and heavily customized using raw HTML, CSS, and JavaScript for specialized functionality.",
     img: "/aaven.svg",
-    iconLists: ["/html.svg", "/css.svg", "/js.svg", "/wordpress.svg"],
+    iconLists: ["/wordpress.svg", "/html.svg", "/css.svg", "/js.svg"],
     link: "https://aavenpharmaceutical.com/",
   },
   {
     id: 3,
-    title: "Live Gold Silver Rate App",
-    des: "A REAL-time Gold and Silver Rate App. This app is built as a PWA and can be installed on mobile devices. It is built using the latest tech stack and features a modern UI.",
-    img: "/shivam.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/ai_saas_app",
+    title: "Shivam Gold Tharad",
+    des: "A real-time, precision-driven tracking platform displaying live gold and silver bullion market rates. Engineered to deliver highly accurate market data with a modern, responsive user interface.",
+    img: "/shivamgold.svg",
+    iconLists: ["/re.svg", "/tail.svg", "/js.svg"], 
+    link: "https://shivamgold.store/", // Update this link when ready
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://github.com/adrianhajdin/iphone",
+    title: "Jewelry Calculator",
+    des: "A dedicated React Native application engineered to digitalize and securely store jewelry transaction details, eliminating manual bookkeeping errors. State management is efficiently handled via Zustand, utilizing AsyncStorage for robust local data persistence.",
+    img: "/Jewellcal.png", // You will need to add a new image for this
+    iconLists: ["/re.svg", "/ts.svg", "/tail.svg"],
+    link: "https://github.com/dhruvsoni-2001", // Update this link when ready
+  },
+  {
+    id: 5,
+    title: "Wholesale Bullion Portal",
+    des: "An enterprise-level portal currently in development for wholesale jewelers. Designed to meticulously track the daily entry, exit, and workflow of precious metals and bulk inventory.",
+    img: "/OrnaDesk.png", // Placeholder image
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"], // Adjust based on your stack
+    link: "#",
+  },
+  {
+    id: 6,
+    title: "Universal Billing Software",
+    des: "A cross-platform billing solution currently in active development, engineered to provide seamless invoicing, financial tracking, and receipt generation across both mobile and desktop environments.",
+    img: "/UBS.png", // Placeholder image
+    iconLists: ["/re.svg", "/ts.svg", "/tail.svg"], // Adjust based on your stack
+    link: "#",
   },
 ];
-
 export const testimonials = [
   {
     quote:
