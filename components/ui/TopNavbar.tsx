@@ -4,6 +4,7 @@ import { useScroll, useMotionValueEvent, motion, AnimatePresence } from "motion/
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import { FaSun, FaMoon, FaEllipsisH, FaTimes } from "react-icons/fa";
+import Link from "next/link";
 
 export const TopNavbar = ({
   navItems,
@@ -53,14 +54,14 @@ export const TopNavbar = ({
       >
         <div className="flex items-center justify-between w-full max-w-7xl px-6 md:px-10 py-4">
           {/* Left Side: Logo */}
-          <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3 cursor-pointer">
             <div className="w-8 h-8 rounded-full border border-stone-400 dark:border-stone-600 flex items-center justify-center">
               {/* Minimalist empty circle or logo goes here */}
             </div>
-            <span className="font-bold tracking-[0.2em] text-xs sm:text-sm text-stone-900 dark:text-white uppercase">
+            <span className="font-bold tracking-[0.2em] text-xs sm:text-sm text-stone-900 dark:text-white uppercase hover:opacity-80 transition-opacity">
               Dhruv Soni
             </span>
-          </div>
+          </Link>
 
           {/* Center: Desktop Links */}
           <div className="hidden md:flex items-center space-x-8">

@@ -267,4 +267,9 @@ export const socialMedia = [
     img: "/link.svg",
     link: "https://www.linkedin.com/in/dhruv-k-soni/",
   },
+  {
+    id:3,
+    img:"/whatsapp.svg",
+    link:"https://wa.me/918780591947",
+  }
 ];
