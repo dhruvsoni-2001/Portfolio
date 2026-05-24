@@ -2,18 +2,33 @@
 
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-
-// Also install this npm i --save-dev @types/react-lottie
-import Lottie from "lottie-react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 
 import { cn } from "@/lib/utils";
-
-import { BackgroundGradientAnimation } from "./backgroundGradiantAnimation";
 import MagicButton from "./MagicButton";
-import { GlobeDemo } from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import RevealOnScroll from "./RevealOnScroll";
+
+// Dynamically import heavy components to optimize initial load times
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
+const GlobeDemo = dynamic(
+	() => import("./GridGlobe").then((mod) => mod.GlobeDemo),
+	{
+		ssr: false,
+		loading: () => (
+			<div className="w-full h-full flex items-center justify-center bg-transparent min-h-[200px]">
+				<div className="animate-pulse text-stone-400 dark:text-stone-500 text-sm">Loading Globe...</div>
+			</div>
+		),
+	}
+);
+
+const BackgroundGradientAnimation = dynamic(
+	() => import("./backgroundGradiantAnimation").then((mod) => mod.BackgroundGradientAnimation),
+	{ ssr: false }
+);
 
 export const BentoGrid = ({
 	className,

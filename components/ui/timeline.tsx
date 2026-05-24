@@ -23,6 +23,7 @@ export interface TimelineEntry {
 	projectTitle?: string;
 	clientName?: string;
 	projectDescription?: string;
+	projectLink?: string;
 	// Common fields
 	bulletPoints?: string[];
 	img?: string;
@@ -121,6 +122,26 @@ export const Timeline = ({ data, title, subtitle }: { data: TimelineEntry[], tit
                                         </li>
                                     ))}
                                 </ul>
+                            )}
+                            {item.projectLink && (
+                                <div className="mt-4 mb-6">
+                                    <a
+                                        href={item.projectLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-purple-600 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-750 text-white font-medium text-sm transition-all duration-300 hover:shadow-lg shadow-purple-500/20 cursor-pointer"
+                                    >
+                                        <span>Visit Live Work</span>
+                                        <svg 
+                                            className="w-4 h-4" 
+                                            fill="none" 
+                                            stroke="currentColor" 
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    </a>
+                                </div>
                             )}
                             {item.altImg && (
                                 <div className="mt-4">
