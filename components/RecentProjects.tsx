@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { useRouter } from "next/navigation";
+
 import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 import AnimatedTitle from "./ui/RecentProjectsTitle";
@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const RecentProjects = () => {
 	const ref = useRef(null);
-	const router = useRouter();
+
 
 	return (
 		<section id="projects" className="py-20 w-full">
