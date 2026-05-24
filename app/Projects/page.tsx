@@ -45,7 +45,7 @@ const Page = () => {
 
                 {/* Section for navigation to other content */}
                 <div className="flex justify-center items-center py-15 z-10">
-                    <span className="mr-3 lg:text-2xl md:text-xl sm:text-lg text-neutral-300">
+                    <span className="mr-3 lg:text-2xl md:text-xl sm:text-lg text-black dark:text-neutral-300">
                         See My Journey Building Real-World Systems
                     </span>
                     <button

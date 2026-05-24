@@ -109,7 +109,7 @@ export const projects = [
     id: 1,
     title: "Nexclock: AI-Powered Productivity Suite",
     des: "A comprehensive cross-platform productivity application. Features a React Native UI with precise alarm functionality built in native Kotlin. Integrated with SDLC tools, a reminder calendar for appointments, and a built-in AI chatbot capable of interfacing with free APIs and guiding users to run small, local LLMs (300M to 1B parameters).",
-    img: "/p1.svg",
+    img: "/nex.jpeg",
     iconLists: ["/re.svg", "/kotlin.svg", "/tail.svg", "/ts.svg"],
     link: "https://github.com/dhruvsoni-2001/alarmclock",
   },
@@ -139,7 +139,7 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Wholesale Bullion Portal",
+    title: "Wholesale Ornaments Portal",
     des: "An enterprise-level portal currently in development for wholesale jewelers. Designed to meticulously track the daily entry, exit, and workflow of precious metals and bulk inventory.",
     img: "/OrnaDesk.png", // Placeholder image
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"], // Adjust based on your stack
@@ -265,6 +265,6 @@ export const socialMedia = [
   {
     id: 2,
     img: "/link.svg",
-    link: "https://www.linkedin.com/in/dhruv-soni-15176a238/",
+    link: "https://www.linkedin.com/in/dhruv-k-soni/",
   },
 ];

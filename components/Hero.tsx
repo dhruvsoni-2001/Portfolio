@@ -28,7 +28,7 @@ const Hero = () => {
 				/>
 			</div>
 
-			<div className="flex justify-center relative my-10 z-10 w-full">
+			<div className="flex flex-col items-center justify-center relative my-10 z-10 w-full">
 				<div className="max-w-[89vw] w-full flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10">
 					{/* Left Content Area */}
 					<div className="flex flex-col items-center lg:items-start text-center lg:text-left flex-1 mt-10 lg:mt-20">
@@ -51,14 +51,7 @@ const Hero = () => {
 							Hi! I&apos;m Dhruv, a Software Developer connecting modern systems with scalable execution — so ideas become reliable products.
 						</p>
  
-						<a href="#about" className="mt-4">
-							<MagicButton
-								className="bg-black text-white dark:bg-white dark:text-black"
-								title="Show my work"
-								icon={<FaLocationArrow />}
-								position="right"
-							/>
-						</a>
+						
 					</div>
  
 					{/* Right Image Placeholder */}
@@ -74,6 +67,18 @@ const Hero = () => {
 							/>
 						</div>
 					</div>
+				</div>
+
+				{/* Centered button container */}
+				<div className="flex justify-center items-center mt-12 w-full">
+					<a href="#about">
+						<MagicButton
+							className="bg-black text-white dark:bg-white dark:text-black"
+							title="Show my work"
+							icon={<FaLocationArrow />}
+							position="right"
+						/>
+					</a>
 				</div>
 			</div>
 		</div>
