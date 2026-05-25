@@ -5,7 +5,7 @@ import Clients from "@/components/Client";
 import RecentProjects from "@/components/RecentProjects"
 import { TopNavbar } from "@/components/ui/TopNavbar";
 import { navItems } from "@/data";
-
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
 	title: "Dhruv's Portfolio",
@@ -23,6 +23,7 @@ export default function Home() {
 				<RecentProjects />
 				<Clients />
 				<Footer />
+				<Analytics />
 			</div>
 		</main>
 	);
